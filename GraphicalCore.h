@@ -66,7 +66,6 @@ class GraphicalCore : public QWidget
 	private:
 		QVBoxLayout* l_main;
 		DigitalTimerDisplay* digitalTimerDisplay;
-		QLabel* timerDisplay;
 		QLabel* instructions;
 
 		QTimer timer;

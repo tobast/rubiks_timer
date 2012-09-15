@@ -65,10 +65,12 @@ void GraphicalCore::buildWidget()
 
 	l_main=new QVBoxLayout;
 
+	/*
 	timerDisplay = new QLabel();
 	timerDisplay->setAlignment(Qt::AlignCenter);
 	timerDisplay->setTextInteractionFlags(Qt::NoTextInteraction);
 	l_main->addWidget(timerDisplay);
+	*/
 
 	digitalTimerDisplay = new DigitalTimerDisplay();
 	l_main->addWidget(digitalTimerDisplay);
@@ -86,9 +88,8 @@ void GraphicalCore::updateDisplay()
 	int sec = csecEllapsed/100;
 	int min = sec/60;
 	sec -= min*60;
-	QString timeText = QString("<font size=\"40\"><b>") +  QString::number(min) + "' " + numberWithDigits(sec,2) + "'' " + numberWithDigits(csec,2) + "</b></font>";
-
-	timerDisplay->setText(timeText);
+//	QString timeText = QString("<font size=\"40\"><b>") +  QString::number(min) + "' " + numberWithDigits(sec,2) + "'' " + numberWithDigits(csec,2) + "</b></font>";
+//	timerDisplay->setText(timeText);
 
 	digitalTimerDisplay->setTime(min, sec, csec);
 }
