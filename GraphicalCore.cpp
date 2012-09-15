@@ -34,7 +34,7 @@
 
 #include "GraphicalCore.h"
 
-GraphicalCore::GraphicalCore() : csecEllapsed(0), k1pressed(false), k2pressed(false), statePressed(false)
+GraphicalCore::GraphicalCore() : csecEllapsed(0), k1pressed(false), k2pressed(false), statePressed(false), noLaunch(false)
 {
 	buildWidget();
 	setFocusPolicy(Qt::StrongFocus);
@@ -119,14 +119,22 @@ void GraphicalCore::onKeyEvent()
 	if(timer.isActive())
 	{
 		if(k1pressed && k2pressed)
+		{
 			timer.stop();
+			noLaunch=true;
+		}
 	}
 	else
 	{
 		if(statePressed && !k1pressed && !k2pressed)
 		{
-			csecEllapsed=0;
-			timer.start();
+			if(noLaunch)
+				noLaunch=false;
+			else
+			{
+				csecEllapsed=0;
+				timer.start();
+			}
 		}
 	}
 

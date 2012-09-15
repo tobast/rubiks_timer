@@ -72,6 +72,8 @@ class GraphicalCore : public QWidget
 		bool k1pressed;
 		bool k2pressed;
 		bool statePressed;
+
+		bool noLaunch;
 };
 
 #endif//DEF_GRAPHICALCORE
