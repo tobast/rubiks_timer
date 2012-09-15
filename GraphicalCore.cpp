@@ -76,6 +76,7 @@ void GraphicalCore::buildWidget()
 	l_main->addWidget(digitalTimerDisplay);
 
 	instructions = new QLabel("Hold down Space and Enter keys, then let them go when you're ready!\nHold them back to end the timer. Good luck!");
+	instructions->setAlignment(Qt::AlignCenter);
 	l_main->addWidget(instructions);
 
 	setLayout(l_main);
