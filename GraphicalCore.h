@@ -37,9 +37,12 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
-#include <QPushButton>
 #include <QTimer>
 #include <QLabel>
+#include <QKeyEvent>
+#include <QString>
+
+#include <QDebug>
 
 class GraphicalCore : public QWidget
 {
@@ -51,17 +54,26 @@ class GraphicalCore : public QWidget
 		void time10ms();
 
 	private://meth
+		QString numberWithDigits(int num, int nbDigits);
+		void buildWidget();
 		void updateDisplay();
+
+		void keyPressEvent(QKeyEvent* e);
+		void keyReleaseEvent(QKeyEvent* e);
+		void onKeyEvent();
 
 	private:
 		QVBoxLayout* l_main;
-		QLabel* timer;
-		QPushButton* resetButton;
+		QLabel* timerDisplay;
 		QLabel* instructions;
 
 		QTimer timer;
 
 		long csecEllapsed; // csed = sec/100
+
+		bool k1pressed;
+		bool k2pressed;
+		bool statePressed;
 };
 
 #endif//DEF_GRAPHICALCORE

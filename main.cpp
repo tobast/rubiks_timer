@@ -38,6 +38,8 @@
 #include <QLibraryInfo>
 #include <QLocale>
 
+#include "GraphicalCore.h"
+
 int main(int argc, char** argv)
 {
 	QApplication a(argc, argv);
@@ -48,7 +50,7 @@ int main(int argc, char** argv)
 	translator.load(QString("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 	a.installTranslator(&translator);
 
-	GraphicalCore* c;
+	GraphicalCore c;
 	c.show();
 	
 	return a.exec();
