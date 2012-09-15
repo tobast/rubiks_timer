@@ -37,7 +37,7 @@
 
 DigitalNumber::DigitalNumber(int initNum)
 {
-	segOffPen = QPen(QColor(0x36,0,0));
+	segOffPen = QPen(QColor(0x1A,0,0));
 	segOffPen.setWidth(SEG_WIDTH/2);
 	segOffPen.setCapStyle(Qt::RoundCap);
 	segOnPen = QPen(segOffPen);
