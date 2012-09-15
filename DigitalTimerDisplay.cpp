@@ -42,6 +42,23 @@ DigitalTimerDisplay::DigitalTimerDisplay()
 	setScene(&scene);
 }
 
+void DigitalTimerDisplay::setTime(int min, int sec, int csec)
+{
+	int min1=min/10, min0=min-min1*10;
+	min1 -= (min1/10)*10;
+	int sec1=sec/10, sec0=sec-sec1*10;
+	sec1 -= (sec1/10)*10;
+	int csec1=csec/10, csec0=csec-csec1*10;
+	csec1 -= (csec1/10)*10;
+
+	minNum[0]->setDigit(min1);
+	minNum[1]->setDigit(min0);
+	secNum[0]->setDigit(sec1);
+	secNum[1]->setDigit(sec0);
+	csecNum[0]->setDigit(csec1);
+	csecNum[1]->setDigit(csec0);
+}
+
 void DigitalTimerDisplay::buildWidget()
 {
 	int nbWidth = DigitalNumber::digitWidth();

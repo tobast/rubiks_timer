@@ -70,7 +70,8 @@ void GraphicalCore::buildWidget()
 	timerDisplay->setTextInteractionFlags(Qt::NoTextInteraction);
 	l_main->addWidget(timerDisplay);
 
-	l_main->addWidget(new DigitalTimerDisplay());
+	digitalTimerDisplay = new DigitalTimerDisplay();
+	l_main->addWidget(digitalTimerDisplay);
 
 	instructions = new QLabel("Hold down Space and Enter keys, then let them go when you're ready!\nHold them back to end the timer. Good luck!");
 	l_main->addWidget(instructions);
@@ -88,6 +89,8 @@ void GraphicalCore::updateDisplay()
 	QString timeText = QString("<font size=\"40\"><b>") +  QString::number(min) + "' " + numberWithDigits(sec,2) + "'' " + numberWithDigits(csec,2) + "</b></font>";
 
 	timerDisplay->setText(timeText);
+
+	digitalTimerDisplay->setTime(min, sec, csec);
 }
 
 void GraphicalCore::keyPressEvent(QKeyEvent* e)

@@ -49,6 +49,7 @@ class DigitalTimerDisplay : public QGraphicsView
 {
 	public:
 		DigitalTimerDisplay();
+		void setTime(int min, int sec, int csec);
 	
 	private://meth
 		void buildWidget();
