@@ -70,6 +70,8 @@ void GraphicalCore::buildWidget()
 	timerDisplay->setTextInteractionFlags(Qt::NoTextInteraction);
 	l_main->addWidget(timerDisplay);
 
+	l_main->addWidget(new DigitalTimerDisplay());
+
 	instructions = new QLabel("Hold down Space and Enter keys, then let them go when you're ready!\nHold them back to end the timer. Good luck!");
 	l_main->addWidget(instructions);
 

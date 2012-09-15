@@ -43,6 +43,8 @@
 #include <QString>
 #include <QIcon>
 
+#include "DigitalTimerDisplay.h"
+
 class GraphicalCore : public QWidget
 {
 	Q_OBJECT

@@ -58,9 +58,9 @@ void DigitalNumber::buildWidget()
 {
 	segments.push_back(new QGraphicsLineItem(SEG_WIDTH*1.5f, SEG_WIDTH*0.5f, SEG_WIDTH*1.5+SEG_HEIGHT, SEG_WIDTH*0.5f));
 	segments.push_back(new QGraphicsLineItem(SEG_WIDTH*2.5f+SEG_HEIGHT, SEG_WIDTH*1.5f, SEG_WIDTH*2.5+SEG_HEIGHT, SEG_WIDTH*1.5f+SEG_HEIGHT));
-	segments.push_back(new QGraphicsLineItem(SEG_WIDTH*2.5f+SEG_HEIGHT, SEG_WIDTH*2.5f+SEG_HEIGHT, SEG_WIDTH*2.5+SEG_HEIGHT, SEG_WIDTH*2.5f+2*SEG_HEIGHT));
+	segments.push_back(new QGraphicsLineItem(SEG_WIDTH*2.5f+SEG_HEIGHT, SEG_WIDTH*3.5f+SEG_HEIGHT, SEG_WIDTH*2.5+SEG_HEIGHT, SEG_WIDTH*3.5f+2*SEG_HEIGHT));
 	segments.push_back(new QGraphicsLineItem(SEG_WIDTH*1.5f, SEG_WIDTH*4.5f+2*SEG_HEIGHT, SEG_WIDTH*1.5+SEG_HEIGHT, SEG_WIDTH*4.5f+2*SEG_HEIGHT));
-	segments.push_back(new QGraphicsLineItem(SEG_WIDTH*0.5f, SEG_WIDTH*2.5f+SEG_HEIGHT, SEG_WIDTH*0.5, SEG_WIDTH*2.5f+2*SEG_HEIGHT));
+	segments.push_back(new QGraphicsLineItem(SEG_WIDTH*0.5f, SEG_WIDTH*3.5f+SEG_HEIGHT, SEG_WIDTH*0.5, SEG_WIDTH*3.5f+2*SEG_HEIGHT));
 	segments.push_back(new QGraphicsLineItem(SEG_WIDTH*0.5f, SEG_WIDTH*1.5f, SEG_WIDTH*0.5, SEG_WIDTH*1.5f+SEG_HEIGHT));
 	segments.push_back(new QGraphicsLineItem(SEG_WIDTH*1.5f, SEG_WIDTH*2.5f+SEG_HEIGHT, SEG_WIDTH*1.5+SEG_HEIGHT, SEG_WIDTH*2.5f+SEG_HEIGHT));
 	for(size_t seg=0; seg<segments.size(); ++seg)

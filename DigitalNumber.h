@@ -62,11 +62,14 @@ static const bool DIGIT_PATTERNS[10][7] =
 	{true,true,true,true,true,true,true},		// 8
 	{true,true,true,true,true,false,true}		// 9
 };
+static const int SEG_HEIGHT=50, SEG_WIDTH=10;
 class DigitalNumber : public QGraphicsItemGroup
 {
 	public:
 		DigitalNumber(int initNum = 0);
 		void setDigit(int digit);
+		static int digitWidth() { return 3*SEG_WIDTH+SEG_HEIGHT; }
+		static int digitHeight() { return 5*SEG_WIDTH+2*SEG_HEIGHT; }
 
 	private: //meth
 		void buildWidget();
@@ -76,7 +79,6 @@ class DigitalNumber : public QGraphicsItemGroup
 		QPen segOffPen, segOnPen;
 
 		std::vector<QGraphicsLineItem*> segments;
-		static const int SEG_HEIGHT=50, SEG_WIDTH=10;
 };
 
 #endif//DEF_DIGITALNUMBER

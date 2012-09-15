@@ -37,16 +37,28 @@
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
-#include <QBrush>
 #include <QGraphicsLineItem>
+#include <QPen>
+#include <QBrush>
+#include <QColor>
+#include <vector>
+
+#include "DigitalNumber.h"
 
 class DigitalTimerDisplay : public QGraphicsView
 {
 	public:
 		DigitalTimerDisplay();
 	
+	private://meth
+		void buildWidget();
+
 	private:
 		QGraphicsScene scene;
+		
+		DigitalNumber* minNum[2];
+		DigitalNumber* secNum[2];
+		DigitalNumber* csecNum[2];
 };
 
 #endif//DEF_DIGITALTIMERDISPLAY
