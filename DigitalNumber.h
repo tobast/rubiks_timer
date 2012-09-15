@@ -56,7 +56,7 @@ class DigitalNumber : public QGraphicsItemGroup
 		QPen segOffPen, segOnPen;
 
 		std::vector<QGraphicsLineItem*> segments;
-		const int SEG_HEIGHT=50, SEG_WIDTH=10;
+		static const int SEG_HEIGHT=50, SEG_WIDTH=10;
 }
 
 #endif//DEF_DIGITALNUMBER
