@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+<RCC>
+	<qresource prefix="/icons">
+		<file alias="softIcon">resources/icon.png</file>
+	</qresource>
+</RCC>
+

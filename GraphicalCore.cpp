@@ -60,6 +60,9 @@ QString GraphicalCore::numberWithDigits(int num, int nbDigits)
 
 void GraphicalCore::buildWidget()
 {
+	setWindowTitle("RubiksTimer");
+	setWindowIcon(QIcon(":/icons/softIcon"));
+
 	l_main=new QVBoxLayout;
 
 	timerDisplay = new QLabel();
