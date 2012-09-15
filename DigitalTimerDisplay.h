@@ -35,6 +35,19 @@
 #ifndef DEF_DIGITALTIMERDISPLAY
 #define DEF_DIGITALTIMERDISPLAY
 
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QBrush>
+#include <QGraphicsLineItem>
+
+class DigitalTimerDisplay : public QGraphicsView
+{
+	public:
+		DigitalTimerDisplay();
+	
+	private:
+		QGraphicsScene scene;
+};
 
 #endif//DEF_DIGITALTIMERDISPLAY
 

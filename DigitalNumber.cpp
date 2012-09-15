@@ -34,3 +34,11 @@
 
 #include "DigitalNumber.h"
 
+DigitalNumber::DigitalNumber(int initNum)
+{
+	buildWidget();
+	setDigit(initNum);
+}
+
+//TODO
+

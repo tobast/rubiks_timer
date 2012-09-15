@@ -40,7 +40,6 @@
 #include <QTimer>
 #include <QLabel>
 #include <QKeyEvent>
-#include <QIcon>
 #include <QString>
 
 class GraphicalCore : public QWidget
