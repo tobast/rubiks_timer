@@ -42,8 +42,6 @@
 #include <QKeyEvent>
 #include <QString>
 
-#include <QDebug>
-
 class GraphicalCore : public QWidget
 {
 	Q_OBJECT

@@ -116,7 +116,6 @@ void GraphicalCore::keyReleaseEvent(QKeyEvent* e)
 
 void GraphicalCore::onKeyEvent()
 {
-	qDebug() << k1pressed << k2pressed << statePressed;
 	if(timer.isActive())
 	{
 		if(k1pressed && k2pressed)
