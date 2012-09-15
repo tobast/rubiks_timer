@@ -41,6 +41,7 @@
 #include <QLabel>
 #include <QKeyEvent>
 #include <QString>
+#include <QIcon>
 
 class GraphicalCore : public QWidget
 {

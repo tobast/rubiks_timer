@@ -41,23 +41,43 @@
 #include <QPen>
 #include <vector>
 
+/* Digits are represented by a boolean matrix describing the state of each segment as following :
+ *   ___
+ * 6| 1 | 2
+ *  |___|
+ * 5| 7 | 3
+ *  |___|
+ *    4 
+ */
+static const bool DIGIT_PATTERNS[10][7] =
+{
+	{true,true,true,true,true,true,false},		// 0
+	{false,true,true,false,false,false,false},	// 1
+	{true,true,false,true,true,false,true},		// 2
+	{true,true,true,true,false,false,true},		// 3
+	{false,true,true,false,false,true,true},	// 4
+	{true,false,true,true,false,true,true},		// 5
+	{true,false,true,true,true,true,true},		// 6
+	{true,true,true,false,false,false,true},	// 7
+	{true,true,true,true,true,true,true},		// 8
+	{true,true,true,true,true,false,true}		// 9
+};
 class DigitalNumber : public QGraphicsItemGroup
 {
 	public:
 		DigitalNumber(int initNum = 0);
 		void setDigit(int digit);
-	
+
 	private: //meth
 		void buildWidget();
-		void setSegments(bool* matrix);
+		void setSegments(const bool* matrix);
 
 	private:
-		static const bool DIGITAL_PATTERNS[10][7];
 		QPen segOffPen, segOnPen;
 
 		std::vector<QGraphicsLineItem*> segments;
 		static const int SEG_HEIGHT=50, SEG_WIDTH=10;
-}
+};
 
 #endif//DEF_DIGITALNUMBER
 
