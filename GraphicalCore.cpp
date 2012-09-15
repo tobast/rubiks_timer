@@ -63,6 +63,8 @@ void GraphicalCore::buildWidget()
 	l_main=new QVBoxLayout;
 
 	timerDisplay = new QLabel();
+	timerDisplay->setAlignment(Qt::AlignCenter);
+	timerDisplay->setTextInteractionFlags(Qt::NoTextInteraction);
 	l_main->addWidget(timerDisplay);
 
 	instructions = new QLabel("Hold down Space and Enter keys, then let them go when you're ready!\nHold them back to end the timer. Good luck!");
@@ -78,7 +80,7 @@ void GraphicalCore::updateDisplay()
 	int sec = csecEllapsed/100;
 	int min = sec/60;
 	sec -= min*60;
-	QString timeText = QString::number(min) + "' " + numberWithDigits(sec,2) + "'' " + numberWithDigits(csec,2);
+	QString timeText = QString("<font size=\"40\"><b>") +  QString::number(min) + "' " + numberWithDigits(sec,2) + "'' " + numberWithDigits(csec,2) + "</b></font>";
 
 	timerDisplay->setText(timeText);
 }
