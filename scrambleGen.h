@@ -39,7 +39,7 @@
 #include <string>
 
 static const int SCRAMBLE_NB_MV = 25, MOVEMENTS_TYPE_NB = 6, MOVEMENTS_PER_TYPE = 3;
-static const char MOVEMENTS[MOVEMENTS_TYPE_NB][MOVEMENTS_PER_TYPE][] = {
+static const char MOVEMENTS[MOVEMENTS_TYPE_NB][MOVEMENTS_PER_TYPE][3] = {
 	{ "U","U'","U2" },
 	{ "D","D'","D2" },
 	{ "R","R'","R2" },
@@ -48,7 +48,7 @@ static const char MOVEMENTS[MOVEMENTS_TYPE_NB][MOVEMENTS_PER_TYPE][] = {
 	{ "B","B'","B2" }
 };
 
-char* randomScramble();
+const char* randomScramble();
 
 #endif//DEF_SCRAMBLEGEN
 

@@ -34,11 +34,11 @@
 
 #include "scrambleGen.h"
 
-char* randomScramble()
+const char* randomScramble()
 {
-	string scramble = "";
+	std::string scramble = "";
 
-	int precMvType = MOVEMENTS_TYPE_NB; // <=> +oo
+	int prevMvType = MOVEMENTS_TYPE_NB; // <=> +oo
 	for(int mvId = 0; mvId < SCRAMBLE_NB_MV; ++mvId)
 	{
 		int mvType = 0;
@@ -49,7 +49,7 @@ char* randomScramble()
 		scramble += MOVEMENTS[mvType][rand()%MOVEMENTS_PER_TYPE];
 		scramble += " ";
 
-		precMvType = mvType;
+		prevMvType = mvType;
 	}
 
 	return scramble.c_str();
