@@ -11,3 +11,4 @@ INCLUDEPATH += .
 HEADERS += DigitalNumber.h DigitalTimerDisplay.h GraphicalCore.h
 SOURCES += DigitalNumber.cpp DigitalTimerDisplay.cpp GraphicalCore.cpp main.cpp
 RESOURCES += resources.qrc
+win32:RC_FILE += icon.rc
