@@ -150,6 +150,7 @@ void GraphicalCore::onKeyEvent()
 		{
 			timer.stop();
 			noLaunch=true;
+			rollScramble();
 		}
 	}
 	else
