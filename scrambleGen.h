@@ -50,6 +50,7 @@ static const std::string MOVEMENTS[MOVEMENTS_TYPE_NB][MOVEMENTS_PER_TYPE] = {
 };
 
 const QString randomScramble();
+const QString maxLengthVoidScramble();
 
 #endif//DEF_SCRAMBLEGEN
 

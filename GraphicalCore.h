@@ -58,7 +58,7 @@ class GraphicalCore : public QWidget
 	private slots:
 		void time10ms();
 		void showAboutDial();
-		void rollScramble();
+		void rollScramble(bool maxLength = false);
 
 	private://meth
 		QString numberWithDigits(int num, int nbDigits);

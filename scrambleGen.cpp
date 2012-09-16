@@ -55,3 +55,14 @@ const QString randomScramble()
 	return QString(scramble.c_str());
 }
 
+const QString maxLengthVoidScramble()
+{
+	std::string scramble = "";
+	for(int mvId = 0; mvId < SCRAMBLE_NB_MV; ++mvId)
+	{
+		scramble += MOVEMENTS[0][2];
+		scramble += ' ';
+	}
+	return QString(scramble.c_str());
+}
+

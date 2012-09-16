@@ -55,9 +55,9 @@ void GraphicalCore::showAboutDial()
 	AboutDialog::create();
 }
 
-void GraphicalCore::rollScramble()
+void GraphicalCore::rollScramble(bool maxLength)
 {
-	scramble->setText(QString("<font size=\"5\">")+QString(randomScramble())+"</font>");
+	scramble->setText(QString("<font size=\"4\">") + QString((maxLength) ? maxLengthVoidScramble() : randomScramble()) + "</font>");
 }
 
 QString GraphicalCore::numberWithDigits(int num, int nbDigits)
@@ -79,6 +79,8 @@ void GraphicalCore::buildWidget()
 	scramble = new QLabel();
 	scramble->setAlignment(Qt::AlignCenter);
 	l_scramble->addWidget(scramble);
+	rollScramble(true);
+	scramble->setMinimumWidth(scramble->width());
 	rollScramble();
 	b_rollScramble = new QPushButton("Roll");
 	connect(b_rollScramble, SIGNAL(clicked()), this, SLOT(rollScramble()));
@@ -99,6 +101,7 @@ void GraphicalCore::buildWidget()
 
 	setLayout(l_main);
 	updateDisplay();
+
 }
 
 void GraphicalCore::updateDisplay()
