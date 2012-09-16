@@ -41,6 +41,8 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 
+#include "data.h"
+
 class AboutDialog : public QDialog
 {
 	public:
@@ -52,6 +54,7 @@ class AboutDialog : public QDialog
 	private:
 		QVBoxLayout* l_main;
 		QHBoxLayout* l_head;
+		QPushButton* returnButton;
 };
 
 #endif//DEF_ABOUTDIALOG

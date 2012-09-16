@@ -34,4 +34,28 @@
 
 #include "AboutDialog.h"
 
+AboutDialog::AboutDialog() 
+{
+	buildWidget();
+}
+
+void AboutDialog::buildWidget()
+{
+	l_main = new QVBoxLayout;
+
+	l_head = new QHBoxLayout;
+	l_head->addLabel(QPixmap(":/icons/softIcon"));
+
+	QVBoxLayout l_headtext* = new QVBoxLayout;
+	l_headtext->addWidget(new QLabel(QString("<font size=\"10\"><b>")+QString(APPNAME)+"</b></font>"));
+	l_headtext->addWidget(new QLabel(QString("<span align=\"right\">")+QString(VERSION)+"</span>"));
+	l_head->addLayout(l_headtext);
+	l_main->addLayout(l_head);
+
+	returnButton = new QPushButton("Ok");
+	connect(returnButton, SIGNAL(clicked()), this, SLOT(close()));
+	l_main->addWidget(returnButton);
+
+	setLayout(l_main);
+}
 

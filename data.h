@@ -46,6 +46,7 @@
 #ifndef DEF_DATA
 #define DEF_DATA
 
+const char APPNAME[] = "RubiksTimer";
 const char VERSION[] = "v1.0";
 const char AUTHOR[] = "Theophile BASTIAN \"Tobast\"";
 const char CONTACT[] = "contact@tobast.fr";
