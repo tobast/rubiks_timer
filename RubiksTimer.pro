@@ -6,6 +6,7 @@ TEMPLATE = app
 TARGET = 
 DEPENDPATH += .
 INCLUDEPATH += .
+CONFIG += release
 
 # Input
 HEADERS += DigitalNumber.h DigitalTimerDisplay.h GraphicalCore.h data.h AboutDialog.h scrambleGen.h
