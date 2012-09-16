@@ -47,6 +47,7 @@
 
 #include "DigitalTimerDisplay.h"
 #include "AboutDialog.h"
+#include "scrambleGen.h"
 
 class GraphicalCore : public QWidget
 {
@@ -57,6 +58,7 @@ class GraphicalCore : public QWidget
 	private slots:
 		void time10ms();
 		void showAboutDial();
+		void rollScramble();
 
 	private://meth
 		QString numberWithDigits(int num, int nbDigits);
@@ -70,7 +72,7 @@ class GraphicalCore : public QWidget
 	private:
 		QVBoxLayout* l_main;
 		DigitalTimerDisplay* digitalTimerDisplay;
-//		QLabel* timerDisplay;
+		QLabel* scramble;
 		QHBoxLayout* l_bottom;
 		QLabel* instructions;
 		QPushButton* b_showAbout;
