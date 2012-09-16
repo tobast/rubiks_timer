@@ -38,10 +38,15 @@
 #include <QLibraryInfo>
 #include <QLocale>
 
+#include <cstdlib>
+#include <ctime>
+
 #include "GraphicalCore.h"
 
 int main(int argc, char** argv)
 {
+	srand(time(NULL));
+
 	QApplication a(argc, argv);
 	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("utf-8")); // Files are UTF8-encoded
 
