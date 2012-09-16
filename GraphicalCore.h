@@ -44,6 +44,7 @@
 #include <QString>
 #include <QIcon>
 #include <QPushButton>
+#include <QFocusEvent>
 
 #include "DigitalTimerDisplay.h"
 #include "AboutDialog.h"
@@ -59,6 +60,7 @@ class GraphicalCore : public QWidget
 		void time10ms();
 		void showAboutDial();
 		void rollScramble(bool maxLength = false);
+		void refocus();
 
 	private://meth
 		QString numberWithDigits(int num, int nbDigits);
@@ -68,6 +70,8 @@ class GraphicalCore : public QWidget
 		void keyPressEvent(QKeyEvent* e);
 		void keyReleaseEvent(QKeyEvent* e);
 		void onKeyEvent();
+
+		void focusOutEvent(QFocusEvent* e);
 
 	private:
 		QVBoxLayout* l_main;

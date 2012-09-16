@@ -60,6 +60,11 @@ void GraphicalCore::rollScramble(bool maxLength)
 	scramble->setText(QString("<font size=\"4\">") + QString((maxLength) ? maxLengthVoidScramble() : randomScramble()) + "</font>");
 }
 
+void GraphicalCore::refocus()
+{
+	setFocus();
+}
+
 QString GraphicalCore::numberWithDigits(int num, int nbDigits)
 {
 	QString out = QString::number(num);
@@ -174,5 +179,11 @@ void GraphicalCore::onKeyEvent()
 		statePressed=true;
 	else if(!k1pressed && !k2pressed)
 		statePressed=false;
+}
+
+void GraphicalCore::focusOutEvent(QFocusEvent* e)
+{
+	setFocus();
+	e->accept();
 }
 
