@@ -35,7 +35,11 @@
 #ifndef DEF_SCRAMBLEGEN
 #define DEF_SCRAMBLEGEN
 
-static const char MOVEMENTS[6][3][] = {
+#include <cstdlib>
+#include <string>
+
+static const int SCRAMBLE_NB_MV = 25, MOVEMENTS_TYPE_NB = 6, MOVEMENTS_PER_TYPE = 3;
+static const char MOVEMENTS[MOVEMENTS_TYPE_NB][MOVEMENTS_PER_TYPE][] = {
 	{ "U","U'","U2" },
 	{ "D","D'","D2" },
 	{ "R","R'","R2" },

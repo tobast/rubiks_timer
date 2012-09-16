@@ -36,6 +36,22 @@
 
 char* randomScramble()
 {
-	return ""; // TODO
+	string scramble = "";
+
+	int precMvType = MOVEMENTS_TYPE_NB; // <=> +oo
+	for(int mvId = 0; mvId < SCRAMBLE_NB_MV; ++mvId)
+	{
+		int mvType = 0;
+		do {
+			mvType = rand() % MOVEMENTS_TYPE_NB;
+		} while(mvType == prevMvType);
+
+		scramble += MOVEMENTS[mvType][rand()%MOVEMENTS_PER_TYPE];
+		scramble += " ";
+
+		precMvType = mvType;
+	}
+
+	return scramble.c_str();
 }
 
