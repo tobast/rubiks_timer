@@ -8,7 +8,7 @@ DEPENDPATH += .
 INCLUDEPATH += .
 
 # Input
-HEADERS += DigitalNumber.h DigitalTimerDisplay.h GraphicalCore.h data.h AboutDialog.h
-SOURCES += DigitalNumber.cpp DigitalTimerDisplay.cpp GraphicalCore.cpp main.cpp AboutDialog.cpp
+HEADERS += DigitalNumber.h DigitalTimerDisplay.h GraphicalCore.h data.h AboutDialog.h scrambleGen.h
+SOURCES += DigitalNumber.cpp DigitalTimerDisplay.cpp GraphicalCore.cpp main.cpp AboutDialog.cpp scrambleGen.cpp
 RESOURCES += resources.qrc
 win32:RC_FILE += icon.rc
