@@ -37,18 +37,19 @@
 
 #include <cstdlib>
 #include <string>
+#include <QString>
 
 static const int SCRAMBLE_NB_MV = 25, MOVEMENTS_TYPE_NB = 6, MOVEMENTS_PER_TYPE = 3;
-static const char MOVEMENTS[MOVEMENTS_TYPE_NB][MOVEMENTS_PER_TYPE][3] = {
-	{ "U","U'","U2" },
-	{ "D","D'","D2" },
-	{ "R","R'","R2" },
-	{ "L","L'","L2" },
-	{ "F","F'","F2" },
-	{ "B","B'","B2" }
+static const std::string MOVEMENTS[MOVEMENTS_TYPE_NB][MOVEMENTS_PER_TYPE] = {
+	{ std::string("U"),std::string("U'"),std::string("U2") },
+	{ std::string("D"),std::string("D'"),std::string("D2") },
+	{ std::string("R"),std::string("R'"),std::string("R2") },
+	{ std::string("L"),std::string("L'"),std::string("L2") },
+	{ std::string("F"),std::string("F'"),std::string("F2") },
+	{ std::string("B"),std::string("B'"),std::string("B2") }
 };
 
-const char* randomScramble();
+const QString randomScramble();
 
 #endif//DEF_SCRAMBLEGEN
 

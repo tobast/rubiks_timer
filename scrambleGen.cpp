@@ -34,7 +34,7 @@
 
 #include "scrambleGen.h"
 
-const char* randomScramble()
+const QString randomScramble()
 {
 	std::string scramble = "";
 
@@ -52,6 +52,6 @@ const char* randomScramble()
 		prevMvType = mvType;
 	}
 
-	return scramble.c_str();
+	return QString(scramble.c_str());
 }
 

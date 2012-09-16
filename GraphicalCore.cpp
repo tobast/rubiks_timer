@@ -57,7 +57,7 @@ void GraphicalCore::showAboutDial()
 
 void GraphicalCore::rollScramble()
 {
-	scramble->setText(QString("<font size=\"10\">")+QString(randomScramble())+"</font>");
+	scramble->setText(QString("<font size=\"5\">")+QString(randomScramble())+"</font>");
 }
 
 QString GraphicalCore::numberWithDigits(int num, int nbDigits)
