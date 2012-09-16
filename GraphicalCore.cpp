@@ -75,10 +75,15 @@ void GraphicalCore::buildWidget()
 
 	l_main=new QVBoxLayout;
 
+	l_scramble = new QHBoxLayout;
 	scramble = new QLabel();
 	scramble->setAlignment(Qt::AlignCenter);
+	l_scramble->addWidget(scramble);
 	rollScramble();
-	l_main->addWidget(scramble);
+	b_rollScramble = new QPushButton("Roll");
+	connect(b_rollScramble, SIGNAL(clicked()), this, SLOT(rollScramble()));
+	l_scramble->addWidget(b_rollScramble);
+	l_main->addLayout(l_scramble);
 
 	digitalTimerDisplay = new DigitalTimerDisplay();
 	l_main->addWidget(digitalTimerDisplay);

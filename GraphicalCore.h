@@ -71,8 +71,10 @@ class GraphicalCore : public QWidget
 
 	private:
 		QVBoxLayout* l_main;
-		DigitalTimerDisplay* digitalTimerDisplay;
+		QHBoxLayout* l_scramble;
 		QLabel* scramble;
+		QPushButton* b_rollScramble;
+		DigitalTimerDisplay* digitalTimerDisplay;
 		QHBoxLayout* l_bottom;
 		QLabel* instructions;
 		QPushButton* b_showAbout;
