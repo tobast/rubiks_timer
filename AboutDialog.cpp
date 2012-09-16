@@ -39,18 +39,33 @@ AboutDialog::AboutDialog()
 	buildWidget();
 }
 
+void AboutDialog::create()
+{
+	AboutDialog dial;
+	dial.exec();
+}
+
 void AboutDialog::buildWidget()
 {
 	l_main = new QVBoxLayout;
 
 	l_head = new QHBoxLayout;
-	l_head->addLabel(QPixmap(":/icons/softIcon"));
+	QLabel* iconLabel = new QLabel;
+	iconLabel->setPixmap(QPixmap(":/icons/softIcon"));
+	l_head->addWidget(iconLabel);
 
-	QVBoxLayout l_headtext* = new QVBoxLayout;
+	QVBoxLayout* l_headtext = new QVBoxLayout;
 	l_headtext->addWidget(new QLabel(QString("<font size=\"10\"><b>")+QString(APPNAME)+"</b></font>"));
-	l_headtext->addWidget(new QLabel(QString("<span align=\"right\">")+QString(VERSION)+"</span>"));
+	QLabel* versionLabel = new QLabel(QString("<i>")+QString(VERSION)+"</i>");
+	versionLabel->setAlignment(Qt::AlignRight);
+	l_headtext->addWidget(versionLabel);
 	l_head->addLayout(l_headtext);
 	l_main->addLayout(l_head);
+
+	l_main->addWidget(new QLabel(QString("Software by ")+QString(AUTHOR)+QString(" <")+QString(CONTACT)+">."));
+	l_main->addWidget(new QLabel(QString("Please report bugs, ideas and stuff to <")+QString(BUGREP)+">."));
+	l_main->addWidget(new QLabel(QString("This software is distributed under the terms of the ")+QString(LICENCE)+QString(" licence \n<")+QString(LICENCE_URL)+">."));
+	l_main->addWidget(new QLabel(QString("<br/><br/>Licence:<br/><br/>")+LICENCE_SHORT_TEXT));
 
 	returnButton = new QPushButton("Ok");
 	connect(returnButton, SIGNAL(clicked()), this, SLOT(close()));

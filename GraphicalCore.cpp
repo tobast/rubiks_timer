@@ -50,6 +50,11 @@ void GraphicalCore::time10ms()
 	updateDisplay();
 }
 
+void GraphicalCore::showAboutDial()
+{
+	AboutDialog::create();
+}
+
 QString GraphicalCore::numberWithDigits(int num, int nbDigits)
 {
 	QString out = QString::number(num);
@@ -75,9 +80,14 @@ void GraphicalCore::buildWidget()
 	digitalTimerDisplay = new DigitalTimerDisplay();
 	l_main->addWidget(digitalTimerDisplay);
 
+	l_bottom = new QHBoxLayout;
 	instructions = new QLabel("Hold down Space and Enter keys, then let them go when you're ready!\nHold them back to end the timer. Good luck!");
 	instructions->setAlignment(Qt::AlignCenter);
-	l_main->addWidget(instructions);
+	l_bottom->addWidget(instructions);
+	b_showAbout = new QPushButton("About...");
+	connect(b_showAbout, SIGNAL(clicked()), this, SLOT(showAboutDial()));
+	l_bottom->addWidget(b_showAbout);
+	l_main->addLayout(l_bottom);
 
 	setLayout(l_main);
 	updateDisplay();

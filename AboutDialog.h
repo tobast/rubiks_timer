@@ -40,6 +40,7 @@
 #include <QPixmap>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QPushButton>
 
 #include "data.h"
 
@@ -47,6 +48,7 @@ class AboutDialog : public QDialog
 {
 	public:
 		AboutDialog();
+		static void create();
 
 	private: //meth
 		void buildWidget();

@@ -52,7 +52,8 @@ const char AUTHOR[] = "Theophile BASTIAN \"Tobast\"";
 const char CONTACT[] = "contact@tobast.fr";
 const char BUGREP[] = "error-report@tobast.fr";
 const char LICENCE[] = "GNU GPL version 3";
-const char LICENCE_SHORT_TEXT[] = "Copyright (C) 2012 BASTIAN Theophile.\nThis program comes with ABSOLUTELY NO WARRANTY of any kind, and is distributed in the hope that it will be useful. This is free software, and you are welcome to modify it, share and redistribute it under certain conditions. Please refer to the GNU GPL version 3 licence for those conditions.";
+const char LICENCE_URL[] = "http://www.gnu.org/licenses/gpl.txt";
+const char LICENCE_SHORT_TEXT[] = "Copyright (C) 2012 BASTIAN Theophile.<br/>This program comes with ABSOLUTELY NO WARRANTY of any kind,<br/>and is distributed in the hope that it will be useful. This is free software,<br/> you are welcome to modify it, share it and redistribute it under certain<br/>conditions. Please refer to the GNU GPL version 3 licence for those conditions.";
 
 #endif//DEF_DATA
 

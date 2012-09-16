@@ -37,13 +37,16 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QTimer>
 #include <QLabel>
 #include <QKeyEvent>
 #include <QString>
 #include <QIcon>
+#include <QPushButton>
 
 #include "DigitalTimerDisplay.h"
+#include "AboutDialog.h"
 
 class GraphicalCore : public QWidget
 {
@@ -53,6 +56,7 @@ class GraphicalCore : public QWidget
 
 	private slots:
 		void time10ms();
+		void showAboutDial();
 
 	private://meth
 		QString numberWithDigits(int num, int nbDigits);
@@ -67,7 +71,9 @@ class GraphicalCore : public QWidget
 		QVBoxLayout* l_main;
 		DigitalTimerDisplay* digitalTimerDisplay;
 //		QLabel* timerDisplay;
+		QHBoxLayout* l_bottom;
 		QLabel* instructions;
+		QPushButton* b_showAbout;
 
 		QTimer timer;
 
