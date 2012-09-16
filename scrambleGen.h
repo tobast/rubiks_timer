@@ -39,7 +39,7 @@
 #include <string>
 #include <QString>
 
-static const int SCRAMBLE_NB_MV = 25, MOVEMENTS_TYPE_NB = 6, MOVEMENTS_PER_TYPE = 3;
+static const int SCRAMBLE_NB_MV = 20, MOVEMENTS_TYPE_NB = 6, MOVEMENTS_PER_TYPE = 3;
 static const std::string MOVEMENTS[MOVEMENTS_TYPE_NB][MOVEMENTS_PER_TYPE] = {
 	{ std::string("U"),std::string("U'"),std::string("U2") },
 	{ std::string("D"),std::string("D'"),std::string("D2") },
