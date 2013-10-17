@@ -32,32 +32,31 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/gpl.txt>.
  */
 
-#include <QApplication>
-#include <QTextCodec>
-#include <QTranslator>
-#include <QLibraryInfo>
-#include <QLocale>
-
-#include <cstdlib>
-#include <ctime>
-
 #include "MainWindow.h"
 
-int main(int argc, char** argv)
+MainWindow::MainWindow(QWidget* parent) :
+	QMainWindow(parent)
 {
-	srand(time(NULL));
+	buildWidget();
+}
 
-	QApplication a(argc, argv);
-	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("utf-8")); // Files are UTF8-encoded
+void MainWindow::buildWidget()
+{
+	centralWidget = new GraphicalCore();
+	setCentralWidget(centralWidget);
 
-	QString locale = QLocale::system().name().section('_', 0, 0);
-	QTranslator translator;
-	translator.load(QString("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-	a.installTranslator(&translator);
+	m_view = menuBar()->addMenu(tr("&View"));
+	a_dispScramble = m_view->addAction(tr("Display scramble"));
+	a_dispScramble->setCheckable(true);
 
-	MainWindow mw;
-	mw.show();
-	
-	return a.exec();
+	m_timer = menuBar()->addMenu(tr("&Timer"));
+	ag_timerStartSelect = new QActionGroup(m_timer);
+	a_spaceEnter = m_timer->addAction(tr("Start with space and enter"));
+	a_spaceEnter->setCheckable(true);
+	a_spaceEnter->setActionGroup(ag_timerStartSelect);
+	a_anykey = m_timer->addAction(tr("Start with any key"));
+	a_anykey->setCheckable(true);
+	a_anykey->setActionGroup(ag_timerStartSelect);
+	ag_timerStartSelect->setExclusive(true);
 }
 

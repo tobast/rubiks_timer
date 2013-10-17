@@ -32,32 +32,32 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/gpl.txt>.
  */
 
-#include <QApplication>
-#include <QTextCodec>
-#include <QTranslator>
-#include <QLibraryInfo>
-#include <QLocale>
+#include <QMainWindow>
+#include <QMenu>
+#include <QMenuBar>
+#include <QAction>
 
-#include <cstdlib>
-#include <ctime>
+#include "GraphicalCore.h"
 
-#include "MainWindow.h"
-
-int main(int argc, char** argv)
+class MainWindow : public QMainWindow
 {
-	srand(time(NULL));
+	Q_OBJECT
 
-	QApplication a(argc, argv);
-	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("utf-8")); // Files are UTF8-encoded
+	public:
+		MainWindow(QWidget* parent=0);
 
-	QString locale = QLocale::system().name().section('_', 0, 0);
-	QTranslator translator;
-	translator.load(QString("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-	a.installTranslator(&translator);
+	private: // meth
+		void buildWidget();
 
-	MainWindow mw;
-	mw.show();
-	
-	return a.exec();
-}
+	private:
+		QMenu* m_view;
+		QAction* a_dispScramble;
+
+		QMenu* m_timer;
+		QActionGroup* ag_timerStartSelect;
+		QAction* a_spaceEnter;
+		QAction* a_anykey;
+
+		GraphicalCore* centralWidget;
+};
 
